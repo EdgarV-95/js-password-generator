@@ -39,7 +39,7 @@ function generatePassword(passwordLength) {
   else symbolChars = '';
 
   let allChars = upperChars + lowerChars + numberChars + symbolChars;
-  let randPasswordArray = Array(+passwordLength + 1);
+  let randPasswordArray = Array(+passwordLength);
   randPasswordArray[0] = upperChars;
   randPasswordArray[1] = lowerChars;
   randPasswordArray[2] = numberChars;
@@ -53,8 +53,8 @@ function generatePassword(passwordLength) {
 }
 
 function shuffleArray(array) {
-  for (let i = array.length + 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
+  for (let i = array.length; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
